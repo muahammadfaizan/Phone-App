@@ -96,11 +96,11 @@ getPhone()
 // const arr = []
 
 let arr;
-
-if(localStorage.getItem("cartitems")){
-    console.log("check cart");
+let items = JSON.parse(localStorage.getItem("cartItems"))
+if(items === null){
+    arr = []
 }else{
-    console.log("no items cart");
+    arr = items
 
 }
 
@@ -135,7 +135,7 @@ function addToCart(index){
 function checkOut(){
     // console.log("hello check cart");
 
-    localStorage.setItem("cartitems" , JSON.stringify(arr))
+    localStorage.setItem("cartItems" , JSON.stringify(arr))
     window.location = "cart.html" ; 
 }
 
