@@ -74,12 +74,11 @@ const div = document.querySelector('.products')
 function getPhone(){
     for(let i = 0 ; i < phones.length ; i++){
         console.log(phones[i])
-
-        div.innerHTML += `
-        
+        div.innerHTML += `        
         <div class="card bg-dark text-light border-light" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">${phones[i].brand + ' ' + phones[i].model}</h5>
+              
               <p class="card-text">${phones[i].price}</p>
               <button class="btn btn-primary" onclick="addToCart(${i})">Add To Cart</button>
             </div>
@@ -98,9 +97,9 @@ getPhone()
 let arr;
 let items = JSON.parse(localStorage.getItem("cartItems"))
 if(items === null){
-    arr = []
+    arr = [] ;
 }else{
-    arr = items
+    arr = items ;
 
 }
 
